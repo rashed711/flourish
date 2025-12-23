@@ -4,14 +4,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flourish Landscaping | Premium Outdoor Solutions</title>
-    <meta name="description" content="Professional landscape design, construction, and maintenance services.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Flourish Landscaping | Premium Landscape Design & Outdoor Solutions</title>
+    <meta name="title" content="Flourish Landscaping | Premium Landscape Design & Outdoor Solutions">
+    <meta name="description" content="Expert landscape design, construction, and irrigation services by Flourish Landscaping. Providing sustainable and luxury outdoor solutions for corporate and residential projects in Egypt.">
+    <meta name="keywords" content="landscape design Egypt, irrigation construction Cairo, landscape maintenance, pest control services Egypt, Flourish Landscaping, sustainable gardens Egypt, outdoor design, professional landscaping Egypt">
+    <meta name="author" content="Flourish Landscaping">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.flourish-landscaping.com/">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.flourish-landscaping.com/">
+    <meta property="og:title" content="Flourish Landscaping | Building Green, Living Clean">
+    <meta property="og:description" content="Leading the way in landscape design, construction, and maintenance. We create beautiful, sustainable outdoor environments that last.">
+    <meta property="og:image" content="https://www2.0zz0.com/2025/12/23/19/181773322.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.flourish-landscaping.com/">
+    <meta property="twitter:title" content="Flourish Landscaping | Building Green, Living Clean">
+    <meta property="twitter:description" content="Leading the way in landscape design, construction, and maintenance. We create beautiful, sustainable outdoor environments that last.">
+    <meta property="twitter:image" content="https://www2.0zz0.com/2025/12/23/19/181773322.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www2.0zz0.com/2025/12/23/19/181773322.png">
+
+    <!-- Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Flourish Landscaping",
+      "image": "https://www2.0zz0.com/2025/12/23/19/181773322.png",
+      "@id": "https://www.flourish-landscaping.com",
+      "url": "https://www.flourish-landscaping.com",
+      "telephone": "+201063588888",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "New Cairo",
+        "addressLocality": "Cairo",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.0444,
+        "longitude": 31.2357
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
+
     <style>
       body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #fff; }
       .font-serif { font-family: 'Playfair Display', serif; }
@@ -31,39 +92,46 @@
       /* Ken Burns Effect */
       @keyframes kenburns {
         0% { transform: scale(1) translate(0, 0); }
-        100% { transform: scale(1.2) translate(-2%, -2%); }
+        100% { transform: scale(1.1) translate(-1%, -1%); }
       }
       .animate-kenburns { animation: kenburns 20s ease-out infinite alternate; }
 
       /* Reveal Animations */
-      .reveal { opacity: 0; filter: blur(15px); transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
-      .reveal-up { transform: translateY(80px); }
-      .reveal-left { transform: translateX(-80px); }
-      .reveal-right { transform: translateX(80px); }
-      .reveal-scale { transform: scale(0.85); }
-      .reveal-rotate { transform: translateY(50px) rotate(3deg); }
+      .reveal { opacity: 0; filter: blur(10px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+      .reveal-up { transform: translateY(50px); }
+      .reveal-left { transform: translateX(-50px); }
+      .reveal-right { transform: translateX(50px); }
+      .reveal-scale { transform: scale(0.95); }
+      .reveal-rotate { transform: translateY(30px) rotate(2deg); }
       
       .reveal.active { opacity: 1; filter: blur(0); transform: translate(0) scale(1) rotate(0); }
 
       /* Floating Blobs */
       @keyframes blob {
         0% { transform: translate(0px, 0px) scale(1); }
-        33% { transform: translate(50px, -80px) scale(1.1); }
-        66% { transform: translate(-30px, 40px) scale(0.9); }
+        33% { transform: translate(30px, -50px) scale(1.05); }
+        66% { transform: translate(-20px, 20px) scale(0.95); }
         100% { transform: translate(0px, 0px) scale(1); }
       }
-      .animate-blob { animation: blob 10s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95); }
-
-      /* Parallax background items */
-      .parallax-slow { transition: transform 0.2s linear; }
+      .animate-blob { animation: blob 8s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95); }
 
       /* Custom Scrollbar */
       ::-webkit-scrollbar { width: 5px; }
-      ::-webkit-scrollbar-track { background: #0f172a; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
       ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
 
+      /* Clip Path for Menu */
+      .clip-path-open { clip-path: circle(150% at 100% 0%); }
+      .clip-path-closed { clip-path: circle(0% at 100% 0%); }
+
       /* Staggered children reveal helper */
-      .stagger-container .reveal { transition-delay: calc(var(--stagger-index) * 0.1s); }
+      .stagger-container .reveal { transition-delay: calc(var(--stagger-index) * 0.08s); }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow { animation: spin-slow 12s linear infinite; }
     </style>
     <script type="importmap">
     {
@@ -79,7 +147,7 @@
     </script>
   </head>
   <body class="bg-white text-slate-900 antialiased">
-    <div id="scroll-progress"></div>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
     <script>
