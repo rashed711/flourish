@@ -83,7 +83,6 @@ const App: React.FC = () => {
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/98 backdrop-blur-lg shadow-md py-2' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="container mx-auto px-5 lg:px-12 flex justify-between items-center">
           <div className="flex items-center cursor-pointer group" onClick={() => scrollToSection('home')}>
-            {/* Logo: Mobile h-16 (As preferred), Desktop h-20 (Proper balance) */}
             <img 
               src={flourishLogo} 
               alt="Flourish Landscaping Logo" 
@@ -91,7 +90,6 @@ const App: React.FC = () => {
             />
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden lg:flex space-x-10 items-center">
             {['About', 'Services'].map((name) => (
               <button 
@@ -112,7 +110,6 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Toggle */}
           <button className={`lg:hidden p-2.5 rounded-xl transition-all active:scale-90 ${isScrolled ? 'text-slate-900 bg-slate-100' : 'text-white bg-white/10 backdrop-blur-sm'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -190,7 +187,6 @@ const App: React.FC = () => {
                 <img src="https://i.pinimg.com/1200x/1d/3e/29/1d3e29928edf94b90ffb543eeece45de.jpg" alt="About Flourish" 
                   className="w-full aspect-[4/5] object-cover transition-transform duration-[2s] group-hover:scale-105" />
               </div>
-              {/* Achievement Badge - Mobile Optimized */}
               <div className="absolute -bottom-4 -right-2 md:-bottom-12 md:-right-12 bg-emerald-600 p-6 md:p-14 rounded-[2rem] md:rounded-[4rem] shadow-2xl reveal reveal-rotate active delay-500 z-20">
                 <p className="text-white font-black text-2xl md:text-5xl leading-none mb-1 md:mb-2">15+ <span className="text-sm md:text-xl font-light">Years</span></p>
                 <p className="text-emerald-100 text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-bold">Industry Leadership</p>
@@ -257,26 +253,26 @@ const App: React.FC = () => {
       <section className="py-20 md:py-40 bg-white relative z-10">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="reveal reveal-up max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-7xl font-bold text-slate-950 mb-12 md:mb-20 tracking-tighter text-center md:text-left">What We Believe</h2>
+            <h2 className="text-4xl md:text-7xl font-bold text-slate-950 mb-12 md:mb-16 tracking-tighter text-center md:text-left">What We Believe</h2>
             
-            {/* Improved Tabs for Mobile */}
-            <div className="flex flex-nowrap md:grid md:grid-cols-5 gap-4 md:gap-8 mb-12 md:mb-24 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory no-scrollbar scroll-px-6">
+            {/* عرض التبويبات - تم تعديل العرض للموبايل ليكون 42% (2.3 تبويبة في العرض) */}
+            <div className="flex flex-nowrap md:grid md:grid-cols-5 gap-3 md:gap-6 mb-12 md:mb-20 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory no-scrollbar scroll-px-6">
               {CORE_VALUES.map((val, idx) => (
                 <button 
                   key={idx}
                   onClick={() => setActiveValueTab(idx)}
-                  className={`flex-shrink-0 w-[55%] md:w-full snap-start relative py-6 md:py-12 px-5 rounded-3xl transition-all duration-500 text-center border-2 flex flex-col items-center justify-center ${activeValueTab === idx ? 'bg-emerald-950 border-emerald-950 text-white scale-[1.05] shadow-2xl' : 'bg-slate-50 border-slate-100 text-slate-400'}`}
+                  className={`flex-shrink-0 w-[42%] md:w-full snap-start relative py-5 md:py-8 px-4 rounded-2xl md:rounded-[2rem] transition-all duration-500 text-center border-2 flex flex-col items-center justify-center ${activeValueTab === idx ? 'bg-emerald-950 border-emerald-950 text-white scale-[1.03] shadow-xl' : 'bg-slate-50 border-slate-100 text-slate-400'}`}
                 >
-                   <div className={`w-10 h-[3px] mb-4 md:mb-6 transition-colors ${activeValueTab === idx ? 'bg-emerald-400' : 'bg-slate-300'}`}></div>
-                   <span className="text-xs md:text-base uppercase tracking-widest font-black">
+                   <div className={`w-8 md:w-10 h-[2px] md:h-[3px] mb-3 md:mb-5 transition-colors ${activeValueTab === idx ? 'bg-emerald-400' : 'bg-slate-300'}`}></div>
+                   <span className="text-[10px] md:text-sm uppercase tracking-widest font-black">
                     {val.title}
                    </span>
                 </button>
               ))}
             </div>
 
-            {/* Principles with dynamic scaling */}
-            <div className="grid gap-8 md:gap-10 mt-6 max-w-5xl border-t border-slate-100 pt-12 md:pt-20">
+            {/* Principles */}
+            <div className="grid gap-6 md:gap-8 mt-6 max-w-5xl border-t border-slate-100 pt-10 md:pt-16">
                {CORE_VALUES[activeValueTab].principles.map((princ, idx) => (
                  <div 
                    key={`${activeValueTab}-${idx}`} 
@@ -287,7 +283,7 @@ const App: React.FC = () => {
                       <CheckCircle2 size={22} className="md:w-8 md:h-8" />
                     </div>
                     <div>
-                       <h4 className="text-lg md:text-2xl font-black text-slate-900 mb-2 leading-tight md:leading-snug">
+                       <h4 className="text-lg md:text-2xl font-black text-slate-900 mb-1 leading-tight md:leading-snug">
                          <span className="text-emerald-700">{princ.title}:</span> <span className="font-light text-slate-600">{princ.description}</span>
                        </h4>
                     </div>
@@ -298,7 +294,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Partners Marquee - Refined for Mobile Viewport */}
+      {/* Partners Marquee */}
       <section className="py-20 md:py-40 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
         <div className="absolute inset-y-0 left-0 w-20 md:w-80 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-20 md:w-80 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
@@ -322,7 +318,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Section - Robust Mobile Layout */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 md:py-40 bg-emerald-950 text-white relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
