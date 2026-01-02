@@ -10,12 +10,12 @@ import SectionHeader from './components/SectionHeader';
 import { SERVICES, CLIENTS, WHY_US, CORE_VALUES } from './constants';
 
 // رابط الشعار المحدث
-const flourishLogo = 'https://www2.0zz0.com/2025/12/23/19/181773322.png';
+const flourishLogo = 'https://flourish-landscaping.com/images/logo/logo.webp';
 
 const HERO_IMAGES = [
-  'https://i.pinimg.com/736x/dc/cd/c6/dccdc6dda9362699135def83fb4cf0ec.jpg',
-  'https://i.pinimg.com/736x/75/b1/b8/75b1b8519b47c96ef1a5746c345d4d55.jpg',
-  'https://i.pinimg.com/1200x/ba/60/27/ba6027d1ddfa96036dbc5a403cfe5c82.jpg'
+  'https://flourish-landscaping.com/images/hero/0019.webp',
+  'https://flourish-landscaping.com/images/hero/0020.webp',
+  'https://flourish-landscaping.com/images/hero/0021.webp'
 ];
 
 const SOCIAL_LINKS = [
@@ -184,7 +184,7 @@ const App: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-14 md:gap-32 items-center">
             <div className="reveal reveal-left relative">
               <div className="relative z-10 overflow-hidden rounded-[2.5rem] md:rounded-[5rem] shadow-xl group">
-                <img src="https://i.pinimg.com/1200x/1d/3e/29/1d3e29928edf94b90ffb543eeece45de.jpg" alt="About Flourish" 
+                <img src="https://flourish-landscaping.com/images/Who_We_Are/023.webp" alt="About Flourish" 
                   className="w-full aspect-[4/5] object-cover transition-transform duration-[2s] group-hover:scale-105" />
               </div>
               <div className="absolute -bottom-4 -right-2 md:-bottom-12 md:-right-12 bg-emerald-600 p-6 md:p-14 rounded-[2rem] md:rounded-[4rem] shadow-2xl reveal reveal-rotate active delay-500 z-20">

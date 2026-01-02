@@ -98,13 +98,13 @@ export const CORE_VALUES = [
 ];
 
 export const CLIENTS = [
-  'https://b.top4top.io/p_365414pyb1.jpg',
-  'https://c.top4top.io/p_365491ey82.jpg',
-  'https://d.top4top.io/p_36548zbdj3.jpg',
-  'https://e.top4top.io/p_3654djkbe4.jpg',
-  'https://f.top4top.io/p_3654huywe5.jpg',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/001.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/002.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/003.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/004.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/005.webp',
   // صور إضافية جديدة لمشاريع فاخرة
-  'https://f.top4top.io/p_3654j3fyx1.jpg',
-  'https://g.top4top.io/p_36542j1qz2.jpg',
-  'https://h.top4top.io/p_3654zhg3c3.jpg'
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/006.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/007.webp',
+  'https://flourish-landscaping.com/images/Trusted_Partnerships/008.webp'
 ];
