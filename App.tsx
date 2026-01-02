@@ -188,7 +188,7 @@ const App: React.FC = () => {
             <div className="reveal reveal-left relative">
               <div className="relative z-10 overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-xl group">
                 <div className="absolute inset-0 bg-emerald-600 opacity-0 group-hover:opacity-10 transition-opacity duration-700 z-10"></div>
-                <img src="https://i.pinimg.com/1200x/13/e1/de/13e1de1144cf5f2099f09ef0e6bf24e1.jpg" alt="About Flourish" 
+                <img src="https://i.pinimg.com/1200x/1d/3e/29/1d3e29928edf94b90ffb543eeece45de.jpg" alt="About Flourish" 
                   className="w-full aspect-[4/5] object-cover transition-transform duration-[2s] group-hover:scale-110" />
               </div>
               <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-10 bg-emerald-600 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl hidden sm:block reveal reveal-rotate active delay-500">
