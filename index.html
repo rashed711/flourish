@@ -42,42 +42,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- JSON-LD Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Flourish Landscaping",
-      "image": "https://www2.0zz0.com/2025/12/23/19/181773322.png",
-      "@id": "https://www.flourish-landscaping.com",
-      "url": "https://www.flourish-landscaping.com",
-      "telephone": "+201063588888",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "New Cairo",
-        "addressLocality": "Cairo",
-        "addressCountry": "EG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.0444,
-        "longitude": 31.2357
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    }
-    </script>
-
     <style>
       body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #fff; }
       .font-serif { font-family: 'Playfair Display', serif; }
@@ -111,6 +75,18 @@
       
       .reveal.active { opacity: 1; filter: blur(0); transform: translate(0) scale(1) rotate(0); }
 
+      /* Horizontal Scroll Animation */
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-marquee {
+        animation: scroll 40s linear infinite;
+      }
+      .animate-marquee:hover {
+        animation-play-state: paused;
+      }
+
       /* Floating Blobs */
       @keyframes blob {
         0% { transform: translate(0px, 0px) scale(1); }
@@ -129,7 +105,6 @@
       .clip-path-open { clip-path: circle(150% at 100% 0%); }
       .clip-path-closed { clip-path: circle(0% at 100% 0%); }
 
-      /* Staggered children reveal helper */
       .stagger-container .reveal { transition-delay: calc(var(--stagger-index) * 0.08s); }
 
       @keyframes spin-slow {
@@ -156,7 +131,6 @@
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
     <script>
-      // تحديث شريط التقدم عند التمرير
       window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;

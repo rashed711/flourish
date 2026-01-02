@@ -102,5 +102,8 @@ export const CLIENTS = [
   'https://c.top4top.io/p_365491ey82.jpg',
   'https://d.top4top.io/p_36548zbdj3.jpg',
   'https://e.top4top.io/p_3654djkbe4.jpg',
-  'https://f.top4top.io/p_3654huywe5.jpg'
+  'https://f.top4top.io/p_3654huywe5.jpg',
+  // صور إضافية جديدة لمشاريع فاخرة
+  'https://i.pinimg.com/736x/8a/7e/3a/8a7e3a3e6c3e6f2a6f8b8f8f8f8f8f8f.jpg',
+  'https://i.pinimg.com/736x/43/61/80/43618018e6b189a695e6f6696d5420d4.jpg'
 ];

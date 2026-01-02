@@ -18,6 +18,12 @@ const HERO_IMAGES = [
   'https://i.pinimg.com/1200x/ba/60/27/ba6027d1ddfa96036dbc5a403cfe5c82.jpg'
 ];
 
+const SOCIAL_LINKS = [
+  { icon: Instagram, url: '#' },
+  { icon: Facebook, url: '#' },
+  { icon: Linkedin, url: 'https://www.linkedin.com/company/flourishlandscaping' }
+];
+
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,6 +73,9 @@ const App: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // مضاعفة قائمة العملاء لضمان استمرارية الحركة في الشريط
+  const marqueeClients = [...CLIENTS, ...CLIENTS];
+
   return (
     <div className="flex flex-col min-h-screen bg-white selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
       
@@ -111,7 +120,7 @@ const App: React.FC = () => {
               onClick={() => scrollToSection('contact')}
               className="group relative bg-emerald-600 text-white px-6 py-3 rounded-full text-[10px] uppercase tracking-widest font-black overflow-hidden hover:scale-105 active:scale-95 transition-all shadow-lg"
             >
-              <span className="relative z-10">Consult Now</span>
+              <span className="relative z-10">Contact Now</span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
             </button>
           </div>
@@ -191,7 +200,7 @@ const App: React.FC = () => {
                 <img src="https://i.pinimg.com/1200x/1d/3e/29/1d3e29928edf94b90ffb543eeece45de.jpg" alt="About Flourish" 
                   className="w-full aspect-[4/5] object-cover transition-transform duration-[2s] group-hover:scale-110" />
               </div>
-              <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-10 bg-emerald-600 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl hidden sm:block reveal reveal-rotate active delay-500">
+              <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-10 bg-emerald-600 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl hidden sm:block reveal reveal-rotate active delay-500 z-20">
                 <Sparkles size={40} className="text-white/40 mb-4 animate-spin-slow" />
                 <p className="text-white font-black text-2xl md:text-4xl leading-none mb-1">15+ <span className="text-lg font-light">Years</span></p>
                 <p className="text-emerald-100 text-[9px] uppercase tracking-[0.3em] font-bold">Industry Leadership</p>
@@ -264,7 +273,6 @@ Our team combines creativity, technical expertise, and passion for excellence to
           <div className="reveal reveal-up max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-slate-950 mb-10 md:mb-16 tracking-tighter">What We Believe</h2>
             
-            {/* Value Tabs - Optimized for Mobile (Shows 2 and partial 3rd) */}
             <div className="flex flex-nowrap md:grid md:grid-cols-5 gap-3 md:gap-6 mb-12 md:mb-20 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory no-scrollbar">
               {CORE_VALUES.map((val, idx) => (
                 <button 
@@ -280,7 +288,6 @@ Our team combines creativity, technical expertise, and passion for excellence to
               ))}
             </div>
 
-            {/* Principles List - Dynamic Content based on Active Tab */}
             <div className="grid lg:grid-cols-1 gap-6 md:gap-8 mt-4 max-w-4xl border-t border-slate-100 pt-10 md:pt-16 min-h-[250px] md:min-h-[300px]">
                {CORE_VALUES[activeValueTab].principles.map((princ, idx) => (
                  <div 
@@ -303,17 +310,29 @@ Our team combines creativity, technical expertise, and passion for excellence to
         </div>
       </section>
 
-      {/* Partners Section - Enhanced Logos */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
-        <div className="container mx-auto px-4 text-center">
-          <h5 className="text-slate-300 text-[10px] md:text-[12px] uppercase tracking-[0.5em] font-black mb-16 md:mb-24">Global Partnerships</h5>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 md:gap-x-24 gap-y-12 md:gap-y-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-1000">
-            {CLIENTS.map((logo, idx) => (
-              <div key={idx} className="reveal reveal-scale group" style={{ "--stagger-index": idx } as React.CSSProperties}>
+      {/* Partners Section - Infinite Horizontal Scroll & Full Color Logos */}
+      <section className="py-24 md:py-40 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+        {/* Gradients on sides for professional look */}
+        <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+        
+        <div className="container mx-auto px-4 text-center mb-16 md:mb-24">
+          <h5 className="text-slate-300 text-[10px] md:text-[14px] uppercase tracking-[0.6em] font-black">Trusted Partnerships</h5>
+        </div>
+
+        <div className="flex overflow-hidden">
+          <div className="flex animate-marquee whitespace-nowrap items-center">
+            {marqueeClients.map((logo, idx) => (
+              <div 
+                key={idx} 
+                className="flex-shrink-0 mx-8 md:mx-20 group relative"
+              >
+                {/* Logo with Soft Glow on Hover */}
+                <div className="absolute inset-0 bg-emerald-500/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <img 
                   src={logo} 
                   alt="Partner Logo" 
-                  className="h-14 md:h-28 lg:h-32 w-auto object-contain transform hover:scale-110 active:scale-95 transition-all duration-700 drop-shadow-sm hover:drop-shadow-xl" 
+                  className="h-16 sm:h-24 md:h-36 lg:h-44 w-auto object-contain transition-all duration-700 group-hover:scale-110 pointer-events-auto" 
                 />
               </div>
             ))}
@@ -357,10 +376,16 @@ Our team combines creativity, technical expertise, and passion for excellence to
 
             <div className="reveal reveal-up mt-24">
                <div className="flex justify-center space-x-10 mb-12">
-                  {[Instagram, Facebook, Linkedin].map((Icon, i) => (
-                    <a key={i} href="#" className="group relative w-16 h-16 rounded-full border border-white/20 flex items-center justify-center overflow-hidden transition-all duration-300 hover:border-emerald-500">
+                  {SOCIAL_LINKS.map((social, i) => (
+                    <a 
+                      key={i} 
+                      href={social.url} 
+                      target={social.url !== '#' ? "_blank" : undefined} 
+                      rel="noopener noreferrer" 
+                      className="group relative w-16 h-16 rounded-full border border-white/20 flex items-center justify-center overflow-hidden transition-all duration-300 hover:border-emerald-500"
+                    >
                       <div className="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                      <Icon size={22} className="relative z-10 group-hover:scale-110 transition-transform" />
+                      <social.icon size={22} className="relative z-10 group-hover:scale-110 transition-transform" />
                     </a>
                   ))}
                </div>
