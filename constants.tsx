@@ -14,7 +14,12 @@ import {
   RefreshCw,
   Heart,
   TrendingUp,
-  UserCheck
+  UserCheck,
+  CheckCircle2,
+  Cpu,
+  Target,
+  Sparkles,
+  Search
 } from 'lucide-react';
 
 export const SERVICES = [
@@ -45,29 +50,57 @@ export const WHY_US = [
 ];
 
 export const CORE_VALUES = [
-  { title: 'Integrity', description: 'Honesty and transparency in all our business dealings and projects.', icon: <ShieldCheck /> },
-  { title: 'Innovation', description: 'Embracing modern technology and creative design solutions.', icon: <Zap /> },
-  { title: 'Passion', description: 'A deep-seated love for nature and the spaces we create.', icon: <Heart /> },
-  { title: 'Growth', description: 'Continuous improvement for our team, clients, and environment.', icon: <TrendingUp /> },
-  { title: 'Accountability', description: 'Taking full ownership of our results and service quality.', icon: <UserCheck /> },
-];
-
-export const PRINCIPLES = [
-  { title: 'Nature First', description: 'Sustainable, eco-friendly solutions.', icon: <Leaf className="text-emerald-500" /> },
-  { title: 'Quality Matters', description: 'Precision and excellence in every detail.', icon: <Award className="text-emerald-500" /> },
-  { title: 'Continuous Care', description: 'Long-term beauty and functional integrity.', icon: <RefreshCw className="text-emerald-500" /> },
-  { title: 'Protection & Balance', description: 'Healthy, pest-free environments.', icon: <ShieldCheck className="text-emerald-500" /> },
+  { 
+    title: 'Integrity', 
+    principles: [
+      { title: 'Nature First', description: 'We prioritize sustainable and eco-friendly solutions.' },
+      { title: 'Quality Matters', description: 'Every project is executed with precision and excellence.' },
+      { title: 'Continuous Care', description: 'From construction to maintenance, we ensure long-lasting beauty and functionality.' },
+      { title: 'Protection & Balance', description: 'Effective pest control and smart design keep spaces healthy and vibrant.' }
+    ]
+  },
+  { 
+    title: 'Innovation', 
+    principles: [
+      { title: 'Smart Irrigation', description: 'Utilizing water-saving technologies and automated systems.' },
+      { title: 'Modern Design', description: 'Blending contemporary architecture with organic natural forms.' },
+      { title: 'Advanced Supply', description: 'Sourcing the healthiest and most unique plant species globally.' },
+      { title: 'Tech Integration', description: 'Using data-driven insights for plant health and garden longevity.' }
+    ]
+  },
+  { 
+    title: 'Passion', 
+    principles: [
+      { title: 'Artistic Vision', description: 'We treat every landscape as a unique piece of living art.' },
+      { title: 'Detail Obsessed', description: 'Focused on the small details that create a big impact.' },
+      { title: 'Client Centric', description: 'Driven by the desire to bring our clients\' outdoor dreams to life.' },
+      { title: 'Love for Green', description: 'Deep respect and admiration for the natural beauty we cultivate.' }
+    ]
+  },
+  { 
+    title: 'Growth', 
+    principles: [
+      { title: 'Team Development', description: 'Investing in the continuous education and skill-set of our experts.' },
+      { title: 'Eco Expansion', description: 'Constantly increasing our positive environmental footprint.' },
+      { title: 'Evolving Methods', description: 'Refining our construction and maintenance techniques year after year.' },
+      { title: 'Future Focused', description: 'Building landscapes that grow more beautiful with time.' }
+    ]
+  },
+  { 
+    title: 'Accountability', 
+    principles: [
+      { title: 'Result Guarantee', description: 'Taking full responsibility for the health and quality of our work.' },
+      { title: 'Transparent Process', description: 'Clear communication and honesty from first sketch to final plant.' },
+      { title: 'Safety Standards', description: 'Rigorous safety protocols in all our construction and supply operations.' },
+      { title: 'Reliable Support', description: 'Always available to ensure your green spaces remain perfect.' }
+    ]
+  },
 ];
 
 export const CLIENTS = [
-  'Orascom Development', 'EMAAR Misr', 'Qatari Diar', 'West', 'RSST', 'Elsewedy Capital', 'Desert Rose'
-];
-
-export const PROJECTS = [
-  { title: 'City Gate', description: 'Irrigation Execution', image: 'https://cbe-realestate-egypt.fsn1.your-objectstorage.com/properties-3984/571525.jpg' },
-  { title: 'Coastal Road', description: 'Irrigation Design & Execution', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&q=80&w=800' },
-  { title: 'O West', description: 'Irrigation Execution & Plants Supply', image: 'https://aqarsky.com/wp-content/uploads/2023/12/%D9%83%D9%85%D8%A8%D9%88%D9%86%D8%AF-%D8%A7%D9%88-%D9%88%D9%8A%D8%B3%D8%AA.webp' },
-  { title: 'Sokhna Terminal Container', description: 'Landscape Supply & Installation', image: 'https://i.pinimg.com/736x/9a/60/5e/9a605e864d2290dc3144144b925dcb49.jpg' },
-  { title: 'MIVIDA', description: 'Irrigation Execution (North 90th Square)', image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/456847524.jpg?k=6ba576f49f9b84ea6dc00597aa4f02ce4662d65ec2da7d10702fbc6703c07e27&o=' },
-  { title: 'Desert Rose Resort', description: 'Pest Control Consulting', image: 'https://i.pinimg.com/1200x/d6/85/d9/d685d9f55e6d83a1efcb1cefab862020.jpg' },
+  'https://b.top4top.io/p_365414pyb1.jpg',
+  'https://c.top4top.io/p_365491ey82.jpg',
+  'https://d.top4top.io/p_36548zbdj3.jpg',
+  'https://e.top4top.io/p_3654djkbe4.jpg',
+  'https://f.top4top.io/p_3654huywe5.jpg'
 ];

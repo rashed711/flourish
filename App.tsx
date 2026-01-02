@@ -4,10 +4,10 @@ import {
   Menu, X, Phone, Mail, ArrowRight, 
   Instagram, Facebook, Linkedin, 
   ChevronRight, MapPin, Clock, Award,
-  Sparkles, MousePointer2
+  Sparkles, MousePointer2, CheckCircle2
 } from 'lucide-react';
 import SectionHeader from './components/SectionHeader';
-import { SERVICES, PROJECTS, CLIENTS, WHY_US } from './constants';
+import { SERVICES, CLIENTS, WHY_US, CORE_VALUES } from './constants';
 
 // رابط الشعار المحدث
 const flourishLogo = 'https://www2.0zz0.com/2025/12/23/19/181773322.png';
@@ -23,6 +23,7 @@ const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [activeValueTab, setActiveValueTab] = useState(0); // 'Integrity' by default
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -96,7 +97,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="hidden lg:flex space-x-8 items-center">
-            {['About', 'Services', 'Projects'].map((name) => (
+            {['About', 'Services'].map((name) => (
               <button 
                 key={name} 
                 onClick={() => scrollToSection(name.toLowerCase())}
@@ -126,7 +127,7 @@ const App: React.FC = () => {
         style={{ clipPath: isMenuOpen ? 'circle(150% at 100% 0%)' : 'circle(0% at 100% 0%)' }}>
         <div className="h-full flex flex-col justify-center items-center space-y-8 p-6 text-center">
           <img src={flourishLogo} alt="Logo" className="h-20 w-auto mb-4 bg-white/10 p-3 rounded-2xl backdrop-blur-md" />
-          {['Home', 'About', 'Services', 'Projects'].map((item, idx) => (
+          {['Home', 'About', 'Services'].map((item, idx) => (
             <button key={item} onClick={() => scrollToSection(item.toLowerCase())} 
               className={`text-3xl font-bold text-white hover:text-emerald-400 transition-all tracking-tighter transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               style={{ transitionDelay: `${idx * 100}ms` }}
@@ -200,10 +201,14 @@ const App: React.FC = () => {
             <div className="reveal reveal-right">
               <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 font-black tracking-[0.3em] uppercase text-[10px] mb-8">Who We Are</span>
               <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tighter leading-tight">
-                Architecting <br /> <span className="text-emerald-600">Lush Havens.</span>
+                We're more than a company <br /> <span className="text-emerald-600">we're a movement.</span>
               </h2>
               <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed mb-10 max-w-lg">
-                We curate sensory experiences through high-end landscaping. Our approach blends technical irrigation mastery with aesthetic plant curation to create sustainable beauty.
+                At Flourish, we specialize in landscape design and construction, pest control, and full maintenance services. <br />
+
+We create beautiful outdoor spaces, protect them from pests, build durable landscape structures, and ensure their long-term care and sustainability.<br />
+
+Our team combines creativity, technical expertise, and passion for excellence to deliver tailored solutions for every project, making every space truly flourish.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 stagger-container">
@@ -253,43 +258,64 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Signature Projects */}
-      <section id="projects" className="py-20 lg:py-32 bg-white z-10 relative">
+      {/* What We Believe Section */}
+      <section className="py-24 lg:py-40 bg-white relative z-10">
         <div className="container mx-auto px-4 lg:px-12">
-          <div className="reveal reveal-up mb-16">
-            <SectionHeader title="Signature Projects" subtitle="A legacy of transforming desert landscapes into flourishing green environments." />
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 stagger-container">
-            {PROJECTS.map((p, i) => (
-              <div 
-                key={i} 
-                className="reveal reveal-scale relative group overflow-hidden rounded-[2.5rem] bg-slate-950 aspect-[4/5] shadow-lg" 
-                style={{ "--stagger-index": i } as React.CSSProperties}
-              >
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-[2.5s] group-hover:scale-110 opacity-70 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                
-                <div className="absolute inset-0 p-10 flex flex-col justify-end transform translate-y-6 group-hover:translate-y-0 transition-all duration-500">
-                  <span className="text-emerald-400 text-[9px] uppercase tracking-[0.4em] font-black mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300">{p.description}</span>
-                  <h4 className="text-2xl md:text-2xl font-bold text-white mb-6 tracking-tighter leading-tight">{p.title}</h4>
-                  <div className="h-[2px] w-12 bg-emerald-500 group-hover:w-full transition-all duration-700 origin-left"></div>
-                </div>
-              </div>
-            ))}
+          <div className="reveal reveal-up max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-950 mb-10 md:mb-16 tracking-tighter">What We Believe</h2>
+            
+            {/* Value Tabs - Optimized for Mobile (Shows 2 and partial 3rd) */}
+            <div className="flex flex-nowrap md:grid md:grid-cols-5 gap-3 md:gap-6 mb-12 md:mb-20 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory no-scrollbar">
+              {CORE_VALUES.map((val, idx) => (
+                <button 
+                  key={idx}
+                  onClick={() => setActiveValueTab(idx)}
+                  className={`flex-shrink-0 w-[42%] md:w-full snap-start relative py-4 md:py-10 px-3 rounded-xl md:rounded-3xl transition-all duration-500 text-center overflow-hidden border-2 flex flex-col items-center justify-center ${activeValueTab === idx ? 'bg-emerald-950 border-emerald-950 text-white scale-105 shadow-2xl' : 'bg-slate-50 border-slate-100 text-slate-400 hover:border-emerald-200 hover:bg-emerald-50/50'}`}
+                >
+                   <div className={`w-6 md:w-8 h-[2px] md:h-[3px] mb-3 md:mb-4 transition-colors ${activeValueTab === idx ? 'bg-emerald-400' : 'bg-slate-300'}`}></div>
+                   <span className={`text-[10px] md:text-sm uppercase tracking-widest font-black ${activeValueTab === idx ? 'opacity-100' : 'opacity-60'}`}>
+                    {val.title}
+                   </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Principles List - Dynamic Content based on Active Tab */}
+            <div className="grid lg:grid-cols-1 gap-6 md:gap-8 mt-4 max-w-4xl border-t border-slate-100 pt-10 md:pt-16 min-h-[250px] md:min-h-[300px]">
+               {CORE_VALUES[activeValueTab].principles.map((princ, idx) => (
+                 <div 
+                   key={`${activeValueTab}-${idx}`} 
+                   className="reveal reveal-up flex items-start group active" 
+                   style={{ "--stagger-index": idx } as React.CSSProperties}
+                 >
+                    <div className="mr-4 md:mr-6 mt-1 text-emerald-600 transition-transform group-hover:scale-125">
+                      <CheckCircle2 size={20} className="md:w-6 md:h-6" />
+                    </div>
+                    <div>
+                       <h4 className="text-base md:text-xl font-black text-slate-900 mb-1">
+                         <span className="text-emerald-700">{princ.title}:</span> <span className="font-light text-slate-600">{princ.description}</span>
+                       </h4>
+                    </div>
+                 </div>
+               ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+      {/* Partners Section - Enhanced Logos */}
+      <section className="py-24 md:py-32 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center">
-          <h5 className="text-slate-300 text-[10px] uppercase tracking-[0.5em] font-black mb-16">Global Partnerships</h5>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-10 md:gap-x-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-            {CLIENTS.map((client, idx) => (
-              <span key={idx} className="text-slate-900 text-lg md:text-xl font-black tracking-tighter hover:text-emerald-600 transition-colors cursor-default transform hover:scale-105">
-                {client.toUpperCase()}
-              </span>
+          <h5 className="text-slate-300 text-[10px] md:text-[12px] uppercase tracking-[0.5em] font-black mb-16 md:mb-24">Global Partnerships</h5>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 md:gap-x-24 gap-y-12 md:gap-y-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-1000">
+            {CLIENTS.map((logo, idx) => (
+              <div key={idx} className="reveal reveal-scale group" style={{ "--stagger-index": idx } as React.CSSProperties}>
+                <img 
+                  src={logo} 
+                  alt="Partner Logo" 
+                  className="h-14 md:h-28 lg:h-32 w-auto object-contain transform hover:scale-110 active:scale-95 transition-all duration-700 drop-shadow-sm hover:drop-shadow-xl" 
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -317,7 +343,6 @@ const App: React.FC = () => {
                   <Phone size={28} className="text-white" />
                 </div>
                 <p className="text-emerald-400 text-[9px] uppercase tracking-widest font-black mb-2 opacity-60">Call Direct</p>
-                {/* تعديل مقاس خط الهاتف للكمبيوتر */}
                 <h3 className="text-2xl md:text-xl lg:text-[1.65rem] font-bold tracking-tight leading-tight">+2 010 635 88888</h3>
               </div>
 
@@ -326,7 +351,6 @@ const App: React.FC = () => {
                   <Mail size={28} className="text-white" />
                 </div>
                 <p className="text-emerald-400 text-[9px] uppercase tracking-widest font-black mb-2 opacity-60">Email Desk</p>
-                {/* تعديل مقاس خط الإيميل للكمبيوتر */}
                 <h3 className="text-xl md:text-lg lg:text-[1.45rem] font-bold tracking-tight leading-tight break-all">info@flourish-landscaping.com</h3>
               </div>
             </div>
