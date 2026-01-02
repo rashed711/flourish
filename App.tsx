@@ -20,7 +20,7 @@ const HERO_IMAGES = [
 
 const SOCIAL_LINKS = [
   { icon: Instagram, url: '#' },
-  { icon: Facebook, url: '#' },
+  { icon: Facebook, url: 'https://www.facebook.com/share/1K2kVbQjwb/' },
   { icon: Linkedin, url: 'https://www.linkedin.com/company/flourishlandscaping' }
 ];
 
