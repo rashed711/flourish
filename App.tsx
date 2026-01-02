@@ -19,9 +19,9 @@ const HERO_IMAGES = [
 ];
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, url: '#' },
-  { icon: Facebook, url: 'https://www.facebook.com/share/1K2kVbQjwb/' },
-  { icon: Linkedin, url: 'https://www.linkedin.com/company/flourishlandscaping' }
+  { icon: Instagram, url: '#', target: '_self' }, // تفتح في نفس الصفحة
+  { icon: Facebook, url: 'https://www.facebook.com/share/1K2kVbQjwb/', target: '_blank' }, // تفتح في صفحة جديدة
+  { icon: Linkedin, url: 'https://www.linkedin.com/company/flourishlandscaping', target: '_blank' }
 ];
 
 const App: React.FC = () => {
